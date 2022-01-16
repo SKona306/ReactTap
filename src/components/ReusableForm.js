@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function ReusableForm(props) {
   return (
-    <React.Fragments>
+    <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
         <input
           type="text"
@@ -29,7 +29,13 @@ function ReusableForm(props) {
           placeholder="Pints in stock" />
           <button type='submit'>{props.buttonText}</button>
       </form>
-    </React.Fragments>
+      <hr />
+      <h4>Tips for Adding Kegs</h4>
+      <ul>
+        <li>A full keg has 24 pints</li>
+        <li>A half keg has 12 pints</li>
+      </ul>
+    </React.Fragment>
   );
 }
 
