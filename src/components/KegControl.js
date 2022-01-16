@@ -83,6 +83,23 @@ class KegControl extends React.Component {
     }
   }
 
+  handleDecreasingKegStock = (id) => {
+    if(this.state.mainKegList > 1) {
+      const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
+      selectedKeg.pints--;
+      const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
+      this.setState({mainKegList:newMainKegList});
+    } else {
+      const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
+      selectedKeg.pints--;
+      const newKegListArray = [];
+      const changedKegArray = newKegListArray.concat(selectedKeg);
+      this.setState({
+        mainKegList: changedKegArray
+      });
+    }
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -92,6 +109,7 @@ class KegControl extends React.Component {
     } else if(this.state.selectedKeg != null) {
       currentlyVisibleState = <KegDetail 
         keg={this.state.selectedKeg}
+        onClickingDecrease={this.handleDecreasingKegStock}
         onClickingIncrease={this.handleIncreasingKegStock}
         onClickingDelete={this.handleDeletingKeg}
         onClickingEdit={this.handleEditClick} />
