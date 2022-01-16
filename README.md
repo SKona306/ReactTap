@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# React Tap
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### A React app that tracks kegs of beer including details like price, alcohol content and more.
+### By Shaun Kent
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+* HTML
+* CSS
+* Javascript
+* React
+* Node Package Manager (npm)
+* ESLint
+* Webpack
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A React app that can keep track of kegs at a bar. The application is able to track specific details about a keg like name, brand, price, alcohol content, and pints in stock. The app also allows the user to add new kegs to the system and update existing kegs. The user can buy and restock a specific keg on the details page. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Component Diagram
 
-### `npm test`
+![component diagram](./src/img/TapRoomCompDiagram.PNG)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup/Instillation Requirements
 
-### `npm run build`
+* Go to this link: `https://github.com/SKona306/ReactTap`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* In the right hand corner click the green button that says `code`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Copy the HTTPS link.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Open a command prompt and traverse to the directory you want the project stored in.
 
-### `npm run eject`
+* In command line enter `git clone [copied HTTPS link]`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Open project in code editor of choice.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* To install dependencies travel to the root directory then enter command `npm install`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* To start app enter `npm start` in command line.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* To exit live server press CTRL + `c`.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Known Bugs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* No known bugs currently
 
-### Code Splitting
+## License 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[MIT](https://choosealicense.com/licenses/mit/)
 
-### Analyzing the Bundle Size
+## Contact Information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* shaunkent81@gmail.com
