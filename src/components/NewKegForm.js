@@ -1,15 +1,11 @@
 import React from 'react'
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types'
 
 function NewKegForm(props) {
-
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    console.log(event.target.names.value);
-    console.log(event.target.brand.value);
-    console.log(event.target.price.value);
-    console.log(event.target.alcpercent.value);
-    console.log(event.target.pints.value);
+    props.onNewKegCreation({name: event.target.name.value, brand: event.target.name.value, price: event.target.price.value, alcpercent: event.target.alcpercent.value, pints: event.target.pints.value, id: v4()});
   }
 
   return (
@@ -37,9 +33,14 @@ function NewKegForm(props) {
           min={1}
           name="pints"
           placeholder="Pints in stock" />
+          <button type='submit'>Add Keg!</button>
       </form>
     </React.Fragment>
   )
+}
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
 }
 
 export default NewKegForm
