@@ -1,7 +1,9 @@
+import * as c from './../actions/ActionTypes';
+
 export default (state = {}, action) => {
   const { name, brand, alcpercent, price, pints, id } = action;
   switch(action.type) {
-    case 'ADD_KEG' : 
+    case c.ADD_KEG : 
       return Object.assign({}, state, {
         [id] : {
           name: name,
@@ -12,11 +14,11 @@ export default (state = {}, action) => {
           id: id
         }
       });
-    case 'DELETE_KEG': 
+    case c.DELETE_KEG: 
       let newState = {...state};
       delete newState[id];
       return newState;
-    case 'INCREMENT_KEG':
+    case c.INCREMENT_KEG:
       return Object.assign({}, state, {
         [id] : {
           name: name,
@@ -26,7 +28,7 @@ export default (state = {}, action) => {
           pints: pints + 1,
           id: id}
       });
-    case 'DECREMENT_KEG': 
+    case c.DECREMENT_KEG: 
       return Object.assign({}, state, {
         [id] : {
           name: name,
