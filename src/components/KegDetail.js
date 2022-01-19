@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function KegDetail(props) {
   const { keg, onClickingDelete, onClickingIncrease, onClickingDecrease } = props;
   const pints = keg.pints === 0 ? "Out of Stock" : keg.pints;
-  const buyButton = keg.pints === 0 ? <p></p> : <button onClick={() => onClickingDecrease(keg.id)}>Buy</button>
+  const buyButton = keg.pints === 0 ? "" : <button onClick={() => onClickingDecrease(keg.id)}>Buy</button>
   return (
     <React.Fragment>
       <h1>Keg Details:</h1>
