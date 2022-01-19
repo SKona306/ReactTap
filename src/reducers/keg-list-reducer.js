@@ -16,6 +16,27 @@ export default (state = {}, action) => {
       let newState = {...state};
       delete newState[id];
       return newState;
+    case 'INCREMENT_KEG':
+      return Object.assign({}, state, {
+        [id] : {
+          name: name,
+          brand: brand,
+          alcpercent: alcpercent,
+          price: price,
+          pints: pints + 1,
+          id: id}
+      });
+    case 'DECREMENT_KEG': 
+      return Object.assign({}, state, {
+        [id] : {
+          name: name,
+          brand: brand,
+          alcpercent: alcpercent,
+          price: price,
+          pints: pints - 1,
+          id: id
+        }
+      });
     default :
     return state;
   }
