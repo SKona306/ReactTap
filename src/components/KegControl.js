@@ -87,37 +87,33 @@ class KegControl extends React.Component {
   }
 
   handleIncreasingKegStock = (id) => {
-    if(this.state.mainKegList > 1) {
-      const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
-      selectedKeg.pints++;
-      const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
-      this.setState({mainKegList:newMainKegList});
-    } else {
-      const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
-      selectedKeg.pints++;
-      const newKegListArray = [];
-      const changedKegArray = newKegListArray.concat(selectedKeg);
-      this.setState({
-        mainKegList: changedKegArray
-      });
-    }
+      const { dispatch } = this.props;
+      const { name, brand, alcpercent, price, pints } = this.props.mainKegList[id];
+      const action = {
+        type: 'INCREMENT_KEG',
+        name: name,
+        brand: brand,
+        alcpercent: alcpercent,
+        price: price,
+        pints: pints,
+        id: id
+      }
+      dispatch(action);
   }
 
   handleDecreasingKegStock = (id) => {
-    if(this.state.mainKegList > 1) {
-      const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
-      selectedKeg.pints--;
-      const newMainKegList = this.state.mainKegList.filter(keg => keg.id !==id).concat(selectedKeg);
-      this.setState({mainKegList:newMainKegList});
-    } else {
-      const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0]
-      selectedKeg.pints--;
-      const newKegListArray = [];
-      const changedKegArray = newKegListArray.concat(selectedKeg);
-      this.setState({
-        mainKegList: changedKegArray
-      });
+    const { dispatch } = this.props;
+    const { name, brand, alcpercent, price, pints } = this.props.mainKegList[id];
+    const action = {
+      type:'DECREMENT_KEG',
+      name: name,
+      brand: brand,
+      alcpercent: alcpercent,
+      price: price,
+      pints: pints,
+      id: id
     }
+    dispatch(action);
   }
 
   render() {
@@ -128,7 +124,7 @@ class KegControl extends React.Component {
       buttonText = "Return to Keg List";
     } else if(this.state.selectedKeg != null) {
       currentlyVisibleState = <KegDetail 
-        keg={this.state.selectedKeg}
+        keg={this.props.mainKegList[this.state.selectedKeg.id]}
         onClickingDecrease={this.handleDecreasingKegStock}
         onClickingIncrease={this.handleIncreasingKegStock}
         onClickingDelete={this.handleDeletingKeg}
